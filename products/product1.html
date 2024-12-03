@@ -15,11 +15,30 @@
       <a href="../views/cart.html">Cart</a>
     </nav>
 
-    <section class="product-detail">
-      <img src="../images/jersey1.jpg" alt="Stephen Curry Jersey" />
-      <h1>Stephen Curry Jersey</h1>
-      <p>$89.99</p>
-      <a href="#" class="cta-btn">Add to Cart</a>
+    <section class="product-container">
+      <div class="product-card">
+        <img src="../images/jersey1.jpg" alt="Stephen Curry Jersey" />
+        <h1>Stephen Curry Jersey</h1>
+        <p class="product-price">$89.99</p>
+        <p class="product-description">
+          Represent the greatest shooter to grace the court in style with this authentic Stephen Curry jersey. 
+          Made from breathable material for comfort and durability. Perfect for fans and collectors alike!
+        </p>
+        <form>
+          <label for="size">Size:</label>
+          <select id="size" name="size">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xl">XL</option>
+          </select>
+          <br />
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" />
+          <br />
+          <button type="submit" class="cta-btn">Add to Cart</button>
+        </form>
+      </div>
     </section>
 
     <footer class="footer">&copy; 2024 Warriors Jerseys</footer>
