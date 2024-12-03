@@ -1,102 +1,167 @@
+/* General Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #00274d; /* Warriors blue */
+  background-image: url("../images/warriors-logo.png"); /* Update to your logo path */
+  background-size: contain; /* Fit logo to viewport width */
+  background-repeat: no-repeat; /* Prevent tiling */
+  background-position: center top; /* Center the logo horizontally and position it at the top */
+  margin: 0;
+  padding: 0;
+}
+
+/* Dimmed Overlay Effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+  z-index: 1;
+  pointer-events: none; /* Allow interactions through the overlay */
+}
+
+/* Sticky Navigation Bar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Keep the navbar above all other content */
+  background-color: #ffc107; /* Warriors yellow */
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for emphasis */
+  border-radius: 0 0 12px 12px; /* Rounded bottom corners */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white; /* Dark text */
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  background-color: #00274d;
+}
+
+.navbar a:hover {
+  background-color: #ffeb3b; /* Lighter yellow on hover */
+  transform: scale(1.05);
+  color: #00274d; /* Interactive enlargement */
+}
+
+.navbar a:active {
+  transform: scale(0.95); /* Slight shrink on click */
+}
+
 /* Hero Section */
 .hero {
   text-align: center;
-  background: linear-gradient(to right, #ffd54f, #ffc107);
-  color: #333;
+  background: linear-gradient(
+    to right,
+    #ffd54f,
+    #ffc107
+  ); /* Gradient matching Warriors theme */
   padding: 50px 20px;
+  z-index: 2;
+  position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
   font-size: 48px;
-  margin-bottom: 15px;
+  color: #333;
 }
 
 .hero p {
   font-size: 20px;
-  margin-bottom: 20px;
+  color: #333;
+  margin: 15px 0;
 }
 
 .cta-btn {
   background-color: #00274d;
-  color: #fff;
+  color: white;
   padding: 10px 20px;
   font-size: 18px;
-  border: none;
   border-radius: 5px;
-  cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .cta-btn:hover {
-  background-color: #003366;
+  background-color: #ffeb3b; /* Darker blue */
   transform: scale(1.05);
+  color: #00274d;
 }
 
 /* Product Section */
 .product-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 30px;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  z-index: 3; /* Ensure the products are above the dimmed overlay */
 }
 
 .product-card {
-  background-color: #fff3e0;
+  background-color: #fff3e0; /* Light cream background */
   color: #333;
   border-radius: 12px;
   width: 300px;
   margin: 15px;
   text-align: center;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow for visibility */
   transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 4; /* Bring product cards above everything else */
+  position: relative; /* Ensure proper stacking */
 }
 
 .product-card img {
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .product-card h2 {
   font-size: 24px;
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 .product-card p {
   font-size: 20px;
   margin: 10px 0;
-  font-weight: bold;
 }
 
-.add-to-cart {
-  background-color: #ffd54f;
-  border: none;
-  color: #333;
-  padding: 10px 20px;
+.product-link {
+  text-decoration: none;
+  background-color: #00274d;
+  color: white;
+  padding: 10px 15px;
   border-radius: 5px;
   font-size: 16px;
-  cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.add-to-cart:hover {
+.product-link:hover {
   background-color: #ffeb3b;
   transform: scale(1.05);
+  color: #00274d;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .product-card {
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
+/* Footer */
+.footer {
+  background-color: #ffc107;
+  color: #333;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 12px 12px 0 0; /* Rounded top corners */
+  position: relative;
+  z-index: 2;
 }

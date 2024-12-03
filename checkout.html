@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Warriors Jerseys</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="home.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="profile.html">Profile</a>
+      <a href="login.html">Login</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+
+    <section class="checkout-container">
+      <h1>Checkout</h1>
+      <form action="#" method="POST">
+        <label for="address">Shipping Address:</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          placeholder="Enter your shipping address"
+          required
+        />
+
+        <label for="payment">Payment Method:</label>
+        <select id="payment" name="payment">
+          <option value="credit">Credit Card</option>
+          <option value="paypal">PayPal</option>
+        </select>
+
+        <button type="submit" class="cta-btn">Place Order</button>
+      </form>
+    </section>
+
+    <footer class="footer">&copy; 2024 Warriors Jerseys</footer>
+  </body>
+</html>
