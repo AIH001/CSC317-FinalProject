@@ -165,3 +165,175 @@ body::before {
   position: relative;
   z-index: 2;
 }
+
+/* Profile Section */
+.profile-container {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #fff3e0; /* Match product card background */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Similar to product cards */
+  position: relative;
+  z-index: 3; /* Ensure it appears above the dimmed overlay */
+}
+
+.profile-container h1 {
+  font-size: 36px;
+  color: #333; /* Dark text color */
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.profile-info strong {
+  font-weight: bold;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: #00274d; /* Match button style */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #ffeb3b; /* Lighter yellow for hover */
+  color: #00274d;
+  transform: scale(1.05);
+}
+
+/* Login Section */
+.login-container {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #fff3e0; /* Match product card background */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Similar to product cards */
+  position: relative;
+  z-index: 3; /* Ensure it appears above the dimmed overlay */
+}
+
+.login-container h1 {
+  font-size: 36px;
+  color: #333; /* Dark text color */
+  margin-bottom: 20px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form label {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 0 5px;
+}
+
+.login-form input {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+.signup-link {
+  color: #00274d; /* Match the theme */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.signup-link:hover {
+  color: #ffeb3b;
+}
+
+/* Cart Section */
+.cart-container {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #fff3e0; /* Match product card background */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Consistent with product cards */
+  position: relative;
+  z-index: 3; /* Ensure it appears above the dimmed overlay */
+}
+
+.cart-container h1 {
+  font-size: 36px;
+  color: #333; /* Dark text color */
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-image {
+  max-width: 100px;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex: 1;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.cart-item-details h2 {
+  font-size: 20px;
+  margin: 5px 0;
+  color: #333;
+}
+
+.cart-item-details p {
+  font-size: 16px;
+  color: #666;
+}
+
+.cart-summary {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.cart-summary p {
+  font-size: 20px;
+  color: #333;
+}
+
+.cart-summary a {
+  margin-top: 10px;
+  display: inline-block;
+}

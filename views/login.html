@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - Warriors Jerseys</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
+    <!-- Navigation -->
     <nav class="navbar">
       <a href="home.html">Home</a>
       <a href="shop.html">Shop</a>
@@ -15,9 +20,10 @@
       <a href="cart.html">Cart</a>
     </nav>
 
+    <!-- Login Section -->
     <section class="login-container">
       <h1>Login</h1>
-      <form action="#" method="POST">
+      <form action="#" method="POST" class="login-form">
         <label for="email">Email:</label>
         <input
           type="email"
@@ -38,9 +44,13 @@
 
         <button type="submit" class="cta-btn">Login</button>
       </form>
-      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      <p>
+        Don't have an account?
+        <a href="signup.html" class="signup-link">Sign Up</a>
+      </p>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">&copy; 2024 Warriors Jerseys</footer>
   </body>
 </html>

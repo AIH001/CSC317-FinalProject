@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop - Warriors Jerseys</title>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
+    <!-- Navigation -->
     <nav class="navbar">
       <a href="home.html">Home</a>
       <a href="shop.html">Shop</a>
@@ -15,14 +20,45 @@
       <a href="cart.html">Cart</a>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
-      <h1>Shop Jerseys</h1>
+      <h1>Welcome to Warriors Jerseys</h1>
+      <p>Pick your favorite player's jersey!</p>
+      <a href="#products" class="cta-btn">Start Shopping</a>
     </header>
 
-    <section class="product-container">
-      <!-- Repeat product-card blocks for all products -->
+    <!-- Shop Products Section -->
+    <section class="product-container" id="products">
+      <div class="product-card">
+        <img src="/product_img/steph_jersey.png" alt="Stephen Curry Jersey" />
+        <h2>Stephen Curry Jersey</h2>
+        <p>$89.99</p>
+        <a href="../products/product1.html" class="product-link"
+          >View Details</a
+        >
+      </div>
+      <div class="product-card">
+        <img
+          src="/product_img/draygreen_jersey.png"
+          alt="Draymond Green Jersey"
+        />
+        <h2>Draymond Green Jersey</h2>
+        <p>$89.99</p>
+        <a href="../products/product2.html" class="product-link"
+          >View Details</a
+        >
+      </div>
+      <div class="product-card">
+        <img src="/product_img/buddy_jersey.png" alt="Buddy Hield Jersey" />
+        <h2>Buddy Hield Jersey</h2>
+        <p>$89.99</p>
+        <a href="../products/product3.html" class="product-link"
+          >View Details</a
+        >
+      </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">&copy; 2024 Warriors Jerseys</footer>
   </body>
 </html>
