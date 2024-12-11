@@ -50,7 +50,35 @@
       </p>
     </section>
 
+    <script>
+      async function handleLogin(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        const response = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          alert(`Welcome, ${data.user.name}!`);
+          window.location.href = "/profile.html";
+        } else {
+          alert("Invalid email or password.");
+        }
+      }
+
+      document
+        .querySelector(".login-form")
+        .addEventListener("submit", handleLogin);
+    </script>
+
     <!-- Footer -->
     <footer class="footer">&copy; 2024 Warriors Jerseys</footer>
+    <script src="/scripts/login.js"></script>
   </body>
 </html>

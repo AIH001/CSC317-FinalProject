@@ -1,0 +1,26 @@
+{
+  "name": "CSC317-FinalProject",
+  "version": "1.0.0",
+  "description": "Golden State Warriors Jersey Ecommerce Store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AIH001/CSC317-FinalProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AIH001/CSC317-FinalProject/issues"
+  },
+  "homepage": "https://github.com/AIH001/CSC317-FinalProject#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "sqlite3": "^5.1.7"
+  }
+}
