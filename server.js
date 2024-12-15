@@ -9,6 +9,8 @@ const PORT = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "CSC317-FinalProject")));
+app.use(express.static(path.join(__dirname, ".")));
+app.use(express.static(path.join(__dirname, "views")));
 app.use(
   session({
     secret: "secret-key",
@@ -18,6 +20,26 @@ app.use(
 );
 
 const db = new sqlite3.Database("./warriors_jerseys.db");
+
+// Routes for Main HTML Pages
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "home.html"));
+});
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "login.html"));
+});
+app.get("/signup", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "signup.html"));
+});
+app.get("/cart", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "cart.html"));
+});
+app.get("/checkout", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "checkout.html"));
+});
+app.get("/shop", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "shop.html"));
+});
 
 console.log("Starting Server...");
 
