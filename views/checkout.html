@@ -113,7 +113,6 @@
     <!-- Footer -->
     <footer class="footer">&copy; 2024 Warriors Jerseys</footer>
 
-    <!-- JavaScript to Handle Order Submission -->
     <script>
       document
               .getElementById("checkoutForm")
@@ -132,7 +131,6 @@
                 const trackingNumber =
                         "WJ" + Math.floor(100000000 + Math.random() * 900000000);
 
-                  // Step 4: Clear the server-side cart
                   await fetch("/api/cart/clear", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
