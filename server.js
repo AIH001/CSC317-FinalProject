@@ -58,23 +58,25 @@ app.post("/api/cart/add", (req, res) => {
 // Get Cart Items
 app.get("/api/cart", (req, res) => {
   const cart = req.session.cart || [];
+
   if (cart.length === 0) {
-    return res.json([]);
+    return res.json([]); // Return an empty cart if no items
   }
 
   const placeholders = cart.map(() => "?").join(",");
   db.all(
-    `SELECT * FROM products WHERE id IN (${placeholders})`,
-    cart,
-    (err, rows) => {
-      if (err) {
-        res.status(500).json({ error: err.message });
-        return;
+      `SELECT id, name, price, image_url FROM products WHERE id IN (${placeholders})`,
+      cart,
+      (err, rows) => {
+        if (err) {
+          console.error("Error fetching cart:", err.message);
+          return res.status(500).json({ error: "Failed to load cart items." });
+        }
+        res.json(rows); // Send product details back to the frontend
       }
-      res.json(rows);
-    }
   );
 });
+
 
 // Remove from Cart
 app.post("/api/cart/remove", (req, res) => {

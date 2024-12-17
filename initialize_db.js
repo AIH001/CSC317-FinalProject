@@ -27,7 +27,7 @@ db.run(`
 db.run(
   `
   INSERT INTO products (name, price, image_url, description) VALUES
-  ('Stephen Curry Jersey', 89.99, '/product_img/step_jersey.png', 'Authentic Stephen Curry jersey.'),
+  ('Stephen Curry Jersey', 89.99, '/product_img/steph_jersey.png', 'Authentic Stephen Curry jersey.'),
   ('Buddy Hield', 89.99, '/product_img/buddy_jersey.png', 'Authentic Buddy Hield Jersey.'),
   ('Draymond Green Jersey', 89.99, '/product_img/draygreen_jersey.png', 'Authentic Draymond Green jersey.')
 `,
