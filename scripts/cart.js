@@ -1,5 +1,4 @@
 // Add Product to Cart
-// Add Product to Cart
 async function addToCart(productId) {
   try {
     const response = await fetch("/api/cart/add", {
@@ -22,13 +21,22 @@ async function fetchCart() {
     const response = await fetch("/api/cart");
     const cartItems = await response.json();
 
-    const container = document.querySelector(".cart-container");
+    const container = document.getElementById("cart-items-container");
     const totalElement = document.getElementById("cart-total");
 
-    container.innerHTML = ""; // Clear previous content
-    let total = 0; // Initialize total price
+    // Clear the container
+    container.innerHTML = "";
 
-    // Dynamically render cart items
+    if (cartItems.length === 0) {
+      // Display a "Cart is Empty" message
+      container.innerHTML = "<p>Your cart is currently empty.</p>";
+      totalElement.textContent = "$0.00";
+      return;
+    }
+
+    let total = 0;
+
+    // Dynamically add cart items
     cartItems.forEach((item) => {
       total += item.price;
 
@@ -48,10 +56,10 @@ async function fetchCart() {
     // Update the total price
     totalElement.textContent = `$${total.toFixed(2)}`;
   } catch (err) {
-    console.error("Error fetching cart:", err);
-    alert("Failed to load cart items.");
+    console.error("Error fetching cart items:", err);
   }
 }
+
 
 
 

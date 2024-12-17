@@ -273,6 +273,8 @@ body::before {
 
 /* Cart Section */
 .cart-container {
+  display: block;
+  visibility: visible;
   text-align: center;
   margin: 50px auto;
   padding: 20px;
