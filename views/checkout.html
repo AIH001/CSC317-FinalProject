@@ -116,17 +116,30 @@
     <!-- JavaScript to Handle Order Submission -->
     <script>
       document
-        .getElementById("checkoutForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault(); // Prevent default form submission
+              .getElementById("checkoutForm")
+              .addEventListener("submit", async function (event) {
+                event.preventDefault(); // Prevent default form submission
 
-          // Generate a fake tracking number
-          const trackingNumber =
-            "WJ" + Math.floor(100000000 + Math.random() * 900000000);
+                try {
+                  // Fetch the current cart items
+                  const response = await fetch("/api/cart");
+                  const cartItems = await response.json();
 
-          // Redirect to the confirmation page with tracking number
-          window.location.href = `order-confirmation.html?tracking=${trackingNumber}`;
-        });
+                  // Save cart items to Local Storage
+                  localStorage.setItem("purchasedCart", JSON.stringify(cartItems));
+
+                  // Generate a fake tracking number
+                const trackingNumber =
+                        "WJ" + Math.floor(100000000 + Math.random() * 900000000);
+
+                // Redirect to the confirmation page with tracking number in the URL
+                window.location.href = `orderConfirmation.html?tracking=${trackingNumber}`;
+                } catch (err) {
+                  console.error("Error fetching cart data:", err);
+                  alert("Failed to complete your order. Please try again.");
+                }
+              });
+
     </script>
   </body>
 </html>
