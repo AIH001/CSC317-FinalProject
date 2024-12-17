@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="home.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="profile.html">Profile</a>
+      <a href="login.html">Login</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+
+    <!-- Confirmation Message -->
+    <section class="checkout-container">
+      <h1>Thank You for Your Order!</h1>
+      <p>Your order is on the way.</p>
+      <p>
+        <strong>Tracking Number:</strong>
+        <span id="tracking-number"></span>
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">&copy; 2024 Warriors Jerseys</footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Extract tracking number from URL
+      const params = new URLSearchParams(window.location.search);
+      const trackingNumber = params.get("tracking");
+
+      // Display tracking number
+      document.getElementById("tracking-number").textContent = trackingNumber;
+    </script>
+  </body>
+</html>
