@@ -132,6 +132,12 @@
                 const trackingNumber =
                         "WJ" + Math.floor(100000000 + Math.random() * 900000000);
 
+                  // Step 4: Clear the server-side cart
+                  await fetch("/api/cart/clear", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                  });
+
                 // Redirect to the confirmation page with tracking number in the URL
                 window.location.href = `orderConfirmation.html?tracking=${trackingNumber}`;
                 } catch (err) {

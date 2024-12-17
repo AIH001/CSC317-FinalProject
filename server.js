@@ -144,6 +144,13 @@ app.post("/api/login", (req, res) => {
   });
 });
 
+// Clear Cart After Checkout
+app.post("/api/cart/clear", (req, res) => {
+  req.session.cart = []; // Clear the cart in the session
+  res.json({ message: "Cart has been cleared." });
+});
+
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
