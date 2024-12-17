@@ -82,6 +82,31 @@ app.get("/api/cart", (req, res) => {
   );
 });
 
+// Fetch User Profile
+app.get("/api/profile", (req, res) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ error: "User not logged in" });
+  }
+
+  // Fetch the user's name and email from the db
+  db.get(
+      "SELECT name, email FROM users WHERE id = ?",
+      [req.session.userId],
+      (err, user) => {
+        if (err) {
+          console.error("Error fetching user:", err.message);
+          return res.status(500).json({ error: "Failed to load profile" });
+        }
+
+        if (!user) {
+          return res.status(404).json({ error: "User not found" });
+        }
+        res.json({ name: user.name, email: user.email });
+      }
+  );
+});
+
+
 
 
 // Remove from Cart

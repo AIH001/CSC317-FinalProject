@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile - Warriors Jerseys</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style.css" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-      <a href="home.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="profile.html">Profile</a>
-      <a href="login.html">Login</a>
-      <a href="cart.html">Cart</a>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - Warriors Jerseys</title>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+          rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+  <a href="home.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="profile.html">Profile</a>
+  <a href="login.html">Login</a>
+  <a href="cart.html">Cart</a>
+</nav>
 
-    <!-- Profile Section -->
-    <section class="profile-container">
-      <h1>Your Profile</h1>
-      <div class="profile-info">
-        <p><strong>Name:</strong> John Doe</p>
-        <p><strong>Email:</strong> johndoe@example.com</p>
-        <a href="edit-profile.html" class="cta-btn">Edit Profile</a>
-      </div>
-    </section>
+<!-- Profile Section -->
+<section class="profile-container">
+  <h1>Your Profile</h1>
+  <div class="profile-info">
+    <p><strong>Name:</strong> <span id="profile-name">Loading...</span></p>
+    <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">&copy; 2024 Warriors Jerseys</footer>
-  </body>
+<!-- Footer -->
+<footer class="footer">&copy; 2024 Warriors Jerseys</footer>
+
+<!-- JavaScript to Fetch User Profile -->
+<script>
+  async function fetchProfile() {
+    try {
+      const response = await fetch("/api/profile");
+      if (!response.ok) {
+        // Handle errors (e.g., user not logged in)
+        window.location.href = "login.html"; // Redirect to login page
+        return;
+      }
+
+      const user = await response.json();
+      document.getElementById("profile-name").textContent = user.name;
+      document.getElementById("profile-email").textContent = user.email;
+    } catch (error) {
+      console.error("Error loading profile:", error);
+      alert("Failed to load profile. Please try again.");
+    }
+  }
+  document.addEventListener("DOMContentLoaded", fetchProfile);
+</script>
+</body>
 </html>
